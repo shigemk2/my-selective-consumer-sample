@@ -35,3 +35,11 @@ class ConsumerOfMessageTypeB extends Actor {
       SelectiveConsumerDriver.completedStep()
   }
 }
+
+class ConsumerOfMessageTypeC extends Actor {
+  def receive = {
+    case message: MessageTypeC =>
+      println(s"ConsumerOfMessageTypeC: $message")
+      SelectiveConsumerDriver.completedStep()
+  }
+}
