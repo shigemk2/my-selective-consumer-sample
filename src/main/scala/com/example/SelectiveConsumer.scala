@@ -23,7 +23,7 @@ class SelectiveConsumer(
 class ConsumerOfMessageTypeA extends Actor {
   def receive = {
     case message: MessageTypeA =>
-      println(s"ConsumerOfMessageTypeB: $message")
+      println(s"ConsumerOfMessageTypeA: $message")
       SelectiveConsumerDriver.completedStep()
   }
 }
