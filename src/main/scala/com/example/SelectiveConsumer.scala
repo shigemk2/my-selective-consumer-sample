@@ -19,3 +19,11 @@ class SelectiveConsumer(
     case message: MessageTypeC => consumerOfC forward message
   }
 }
+
+class ConsumerOfMessageTypeA extends Actor {
+  def receive = {
+    case message: MessageTypeA =>
+      println(s"ConsumerOfMessageTypeB: $message")
+      SelectiveConsumerDriver.completedStep()
+  }
+}
